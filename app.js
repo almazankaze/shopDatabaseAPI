@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 import products from "./routes/products.js";
+import search from "./routes/search.js";
 
 const app = express();
 dotenv.config();
@@ -13,9 +14,10 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/products", products);
+app.use("/search", search);
 
 app.get("/", (req, res) => {
-  res.send("APP RUNNING");
+  res.send("APP RUNNING!");
 });
 
 const PORT = process.env.PORT || 5000;
