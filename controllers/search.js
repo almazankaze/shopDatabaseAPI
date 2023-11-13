@@ -12,7 +12,7 @@ export const getAutoCompleteProducts = async (req, res) => {
             query: auto,
             path: "name",
             fuzzy: {
-              maxEdits: 2,
+              maxEdits: 1,
             },
           },
         },
@@ -45,15 +45,15 @@ export const getProducts = async (req, res) => {
         $search: {
           text: {
             query: term,
-            path: "name",
+            path: ["name", "categories"],
             fuzzy: {
-              maxEdits: 2,
+              maxEdits: 1,
             },
           },
         },
       },
       {
-        $limit: 50,
+        $limit: 30,
       },
       {
         $project: {
@@ -63,9 +63,10 @@ export const getProducts = async (req, res) => {
           img: 1,
           dprice: 1,
           oprice: 1,
-          percentOff: 1,
+          onSale: 1,
           rating: 1,
           inStock: 1,
+          categories: 1,
         },
       },
     ];
