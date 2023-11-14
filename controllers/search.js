@@ -20,7 +20,7 @@ const limitStage = {
   $limit: 64,
 };
 
-const createSearchAggregation = async (searchTerm, category) => {
+const createSearchAggregation = async (searchTerm) => {
   let searchAggregation = [];
 
   let searchStage = {
@@ -46,17 +46,13 @@ const createSearchAggregation = async (searchTerm, category) => {
 
   const categoryObject = {
     text: {
-      query: category,
+      query: "games",
       path: "categories",
     },
   };
 
   if (searchTerm !== "") {
     mustArray.push(searchTermObject);
-  }
-
-  if (category !== "") {
-    filterArray.push(categoryObject);
   }
 
   searchStage.$search.compound.must = mustArray;
@@ -111,7 +107,7 @@ export const getProducts = async (req, res) => {
   result.page = page;
 
   try {
-    const agg = await createSearchAggregation(term, "Games");
+    const agg = await createSearchAggregation(term);
 
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
