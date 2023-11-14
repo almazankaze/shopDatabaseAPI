@@ -1,6 +1,72 @@
 import mongoose from "mongoose";
 import Product from "../models/product.js";
 
+const projectStage = {
+  $project: {
+    _id: 1,
+    score: { $meta: "searchScore" },
+    name: 1,
+    img: 1,
+    dprice: 1,
+    oprice: 1,
+    onSale: 1,
+    rating: 1,
+    inStock: 1,
+    categories: 1,
+  },
+};
+
+const limitStage = {
+  $limit: 64,
+};
+
+const createSearchAggregation = async (searchTerm, category) => {
+  let searchAggregation = [];
+
+  let searchStage = {
+    $search: {
+      compound: {},
+    },
+  };
+
+  let filterArray = [];
+  let mustArray = [];
+  let shouldArray = [];
+  let mustNotArray = [];
+
+  const searchTermObject = {
+    text: {
+      query: searchTerm,
+      path: ["name", "categories"],
+      fuzzy: {
+        maxEdits: 1,
+      },
+    },
+  };
+
+  const categoryObject = {
+    text: {
+      query: category,
+      path: "categories",
+    },
+  };
+
+  if (searchTerm !== "") {
+    mustArray.push(searchTermObject);
+  }
+
+  if (category !== "") {
+    filterArray.push(categoryObject);
+  }
+
+  searchStage.$search.compound.must = mustArray;
+  searchStage.$search.compound.filter = filterArray;
+
+  searchAggregation.push(searchStage, limitStage, projectStage);
+
+  return searchAggregation;
+};
+
 export const getAutoCompleteProducts = async (req, res) => {
   try {
     const { auto } = req.query;
@@ -45,36 +111,7 @@ export const getProducts = async (req, res) => {
   result.page = page;
 
   try {
-    const agg = [
-      {
-        $search: {
-          text: {
-            query: term,
-            path: ["name", "categories"],
-            fuzzy: {
-              maxEdits: 1,
-            },
-          },
-        },
-      },
-      {
-        $limit: 64,
-      },
-      {
-        $project: {
-          _id: 1,
-          score: { $meta: "searchScore" },
-          name: 1,
-          img: 1,
-          dprice: 1,
-          oprice: 1,
-          onSale: 1,
-          rating: 1,
-          inStock: 1,
-          categories: 1,
-        },
-      },
-    ];
+    const agg = await createSearchAggregation(term, "Games");
 
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
