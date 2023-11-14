@@ -37,9 +37,14 @@ export const getAutoCompleteProducts = async (req, res) => {
 };
 
 export const getProducts = async (req, res) => {
-  try {
-    const { term } = req.query;
+  const term = req.query.term;
+  const page = req.query.page ? parseInt(req.query.page) : 1;
+  const limit = 8;
+  const result = {};
 
+  result.page = page;
+
+  try {
     const agg = [
       {
         $search: {
@@ -53,7 +58,7 @@ export const getProducts = async (req, res) => {
         },
       },
       {
-        $limit: 30,
+        $limit: 64,
       },
       {
         $project: {
@@ -71,10 +76,18 @@ export const getProducts = async (req, res) => {
       },
     ];
 
-    const resp = await Product.aggregate(agg);
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
 
-    return res.json(resp);
+    const resp = await Product.aggregate(agg);
+    result.pages = Math.ceil(resp.length / limit);
+
+    result.result = resp.slice(startIndex, endIndex);
+
+    return res.json(result);
   } catch (err) {
-    res.json([]);
+    result.result = [];
+    result.pages = 0;
+    res.json(result);
   }
 };
