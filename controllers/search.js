@@ -107,6 +107,8 @@ const createSearchAggregation = async (
     mustArray.push(categoryObject);
   }
 
+  filterArray.push(rangeObject);
+
   searchStage.$search.compound.must = mustArray;
   searchStage.$search.compound.filter = filterArray;
 
@@ -158,7 +160,7 @@ export const getProducts = async (req, res) => {
   const freeShipping = /true/.test(req.query.freeShip);
   const categories = req.query.categories ? req.query.categories : [];
   const minPrice = req.query.minPrice ? req.query.minPrice : 0;
-  const maxPrice = req.query.maxPrice;
+  const maxPrice = req.query.maxPrice ? req.query.maxPrice : 10000;
   const limit = 8;
   const result = {};
 
