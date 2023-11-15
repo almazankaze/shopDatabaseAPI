@@ -6,8 +6,10 @@ const ProductSchema = new Schema({
   shortname: String,
   desc: String,
   img: String,
-  dprice: Number,
-  oprice: Number,
+  price: {
+    current: Number,
+    original: Number,
+  },
   onSale: Boolean,
   rating: Number,
   inStock: Boolean,

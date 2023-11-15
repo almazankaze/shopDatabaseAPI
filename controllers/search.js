@@ -7,8 +7,7 @@ const projectStage = {
     score: { $meta: "searchScore" },
     name: 1,
     img: 1,
-    dprice: 1,
-    oprice: 1,
+    price: 1,
     onSale: 1,
     rating: 1,
     inStock: 1,
@@ -20,7 +19,15 @@ const limitStage = {
   $limit: 64,
 };
 
-const createSearchAggregation = async (searchTerm) => {
+const createSearchAggregation = async (
+  searchTerm,
+  onSale,
+  inStock,
+  freeShipping,
+  category,
+  minPrice,
+  maxPrice
+) => {
   let searchAggregation = [];
 
   let searchStage = {
@@ -44,15 +51,60 @@ const createSearchAggregation = async (searchTerm) => {
     },
   };
 
+  const inStockObject = {
+    equals: {
+      value: true,
+      path: "inStock",
+    },
+  };
+
+  const onSaleObject = {
+    equals: {
+      value: true,
+      path: "onSale",
+    },
+  };
+
+  const shippingObject = {
+    range: {
+      path: "price.current",
+      gte: 30,
+    },
+  };
+
   const categoryObject = {
     text: {
-      query: "games",
+      query: category,
       path: "categories",
+    },
+  };
+
+  const rangeObject = {
+    range: {
+      path: "price.current",
+      gte: minPrice,
+      lte: maxPrice,
     },
   };
 
   if (searchTerm !== "") {
     mustArray.push(searchTermObject);
+  }
+
+  if (onSale === true) {
+    mustArray.push(onSaleObject);
+  }
+
+  if (inStock === true) {
+    mustArray.push(inStockObject);
+  }
+
+  if (freeShipping === true) {
+    filterArray.push(shippingObject);
+  }
+
+  if (category.length !== 0) {
+    mustArray.push(categoryObject);
   }
 
   searchStage.$search.compound.must = mustArray;
@@ -101,13 +153,27 @@ export const getAutoCompleteProducts = async (req, res) => {
 export const getProducts = async (req, res) => {
   const term = req.query.term;
   const page = req.query.page ? parseInt(req.query.page) : 1;
+  const onSale = /true/.test(req.query.onSale);
+  const inStock = /true/.test(req.query.inStock);
+  const freeShipping = /true/.test(req.query.freeShip);
+  const categories = req.query.categories ? req.query.categories : [];
+  const minPrice = req.query.minPrice ? req.query.minPrice : 0;
+  const maxPrice = req.query.maxPrice;
   const limit = 8;
   const result = {};
 
   result.page = page;
 
   try {
-    const agg = await createSearchAggregation(term);
+    const agg = await createSearchAggregation(
+      term,
+      onSale,
+      inStock,
+      freeShipping,
+      categories,
+      minPrice,
+      maxPrice
+    );
 
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
