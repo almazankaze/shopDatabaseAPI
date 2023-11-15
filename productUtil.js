@@ -36,11 +36,29 @@ const addProduct = async () => {
 
 const removeProduct = async () => {
   try {
-    await Product.findByIdAndRemove("655191cce773ae970ed4b058");
+    await Product.findByIdAndRemove(process.env.ID);
 
     return "Deleted product";
   } catch (err) {
     return "Error deleting the product";
+  }
+};
+
+const updateProduct = async () => {
+  try {
+    const updated = await Product.findByIdAndUpdate(
+      process.env.ID,
+      {
+        inStock: false,
+      },
+      { new: true, runValidators: true }
+    );
+
+    // await foundProduct.toggleOnSale(true, 20);
+
+    return "Updated product";
+  } catch (err) {
+    return "Error updating the product";
   }
 };
 
