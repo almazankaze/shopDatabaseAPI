@@ -16,11 +16,15 @@ const newProduct = {
   shortname: "Call of Duty: Modern Warfare III",
   desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
   img: "",
-  dprice: "",
-  oprice: 69.99,
-  percentOff: "",
-  rating: 4,
+  price: {
+    current: 59.99,
+    original: 59.99,
+  },
+  onSale: false,
+  rating: 5,
   inStock: true,
+  productType: "Games",
+  categories: ["Nintendo Switch"],
 };
 
 const addProduct = async () => {

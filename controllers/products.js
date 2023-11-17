@@ -23,30 +23,6 @@ export const getSingleProduct = async (req, res) => {
   }
 };
 
-export const createProduct = async (req, res) => {
-  const productInfo = req.body;
-
-  const newProduct = new Product(productInfo);
-
-  try {
-    await newProduct.save();
-
-    res.status(201).json(newProduct);
-  } catch (e) {
-    res.status(409).json({ message: e.message });
-  }
-};
-
-export const removeProduct = async (req, res) => {
+export const updateProduct = async (req, res) => {
   const { id } = req.params;
-
-  if (!mongoose.Types.ObjectId.isValid(id))
-    return res.status(404).send("No product with that id exists");
-  try {
-    await Product.findByIdAndRemove(id);
-
-    res.json({ message: "Product was deleted successfully" });
-  } catch (e) {
-    res.status(404).json({ message: e.message });
-  }
 };
