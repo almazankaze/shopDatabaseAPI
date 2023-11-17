@@ -13,6 +13,7 @@ const ProductSchema = new Schema({
   onSale: { type: Boolean, required: true },
   rating: { type: Number, default: 0, min: 0, max: 5 },
   inStock: { type: Boolean, default: false },
+  productType: { type: String, required: true },
   categories: { type: [String], required: true },
 });
 

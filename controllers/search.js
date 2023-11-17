@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import Product from "../models/product.js";
 
 const projectStage = {
@@ -11,6 +10,7 @@ const projectStage = {
     onSale: 1,
     rating: 1,
     inStock: 1,
+    productType: 1,
     categories: 1,
   },
 };
@@ -24,6 +24,7 @@ const createSearchAggregation = async (
   onSale,
   inStock,
   freeShipping,
+  productType,
   category,
   minPrice,
   maxPrice
@@ -44,7 +45,7 @@ const createSearchAggregation = async (
   const searchTermObject = {
     text: {
       query: searchTerm,
-      path: ["name", "categories"],
+      path: ["name", "categories", "productType"],
       fuzzy: {
         maxEdits: 1,
       },
@@ -69,6 +70,13 @@ const createSearchAggregation = async (
     range: {
       path: "price.current",
       gte: 30,
+    },
+  };
+
+  const productTypeObject = {
+    text: {
+      query: productType,
+      path: "productType",
     },
   };
 
@@ -105,6 +113,10 @@ const createSearchAggregation = async (
 
   if (category.length !== 0) {
     mustArray.push(categoryObject);
+  }
+
+  if (productType !== "All") {
+    mustArray.push(productTypeObject);
   }
 
   filterArray.push(rangeObject);
@@ -158,11 +170,13 @@ export const getProducts = async (req, res) => {
   const onSale = /true/.test(req.query.onSale);
   const inStock = /true/.test(req.query.inStock);
   const freeShipping = /true/.test(req.query.freeShip);
+  const productType = req.query.productType ? req.query.productType : "All";
   const categories = req.query.categories ? req.query.categories : [];
   const minPrice = req.query.minPrice ? req.query.minPrice : 0;
   const maxPrice = req.query.maxPrice ? req.query.maxPrice : 10000;
   const limit = 8;
   const result = {};
+  let params = "";
 
   result.page = page;
 
@@ -172,6 +186,7 @@ export const getProducts = async (req, res) => {
       onSale,
       inStock,
       freeShipping,
+      productType,
       categories,
       minPrice,
       maxPrice
@@ -185,10 +200,24 @@ export const getProducts = async (req, res) => {
 
     result.result = resp.slice(startIndex, endIndex);
 
+    if (onSale) params += "&onSale=true";
+    if (freeShipping) params += "&freeShip=true";
+    if (inStock) params += "&inStock=true";
+    if (productType !== "All") params += "&productType=" + productType;
+    if (minPrice > 0) params += "&minPrice=" + minPrice;
+    if (maxPrice < 10000) params += "&maxPrice=" + maxPrice;
+
+    categories.forEach((element) => {
+      params += "&categories=" + element;
+    });
+
+    result.path = params;
+
     return res.json(result);
   } catch (err) {
     result.result = [];
     result.pages = 0;
+    result.path = params;
     res.json(result);
   }
 };

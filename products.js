@@ -11,7 +11,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 5,
     inStock: true,
-    categories: ["Games", "Nintendo Switch"],
+    productType: "Games",
+    categories: ["Nintendo Switch"],
   },
   {
     name: "Nintendo - Switch – OLED Model w/ White Joy-Con - White",
@@ -25,7 +26,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 5,
     inStock: true,
-    categories: ["Consoles", "Nintendo Switch"],
+    productType: "Consoles",
+    categories: ["Nintendo Switch"],
   },
   {
     name: "Sony - PlayStation 5 Console",
@@ -39,7 +41,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 5,
     inStock: false,
-    categories: ["Consoles", "Playstation 5"],
+    productType: "Consoles",
+    categories: ["Playstation 5"],
   },
   {
     name: "Logitech - G203 LIGHTSYNC Wired Optical Gaming Mouse with 8,000 DPI sensor - Black",
@@ -53,7 +56,8 @@ const SHOP_DATA = [
     onSale: true,
     rating: 3,
     inStock: false,
-    categories: ["Accessories", "PC"],
+    productType: "Accessories",
+    categories: ["PC"],
   },
   {
     name: "Pokémon Scarlet - Nintendo Switch, Nintendo Switch – OLED Model, Nintendo Switch Lite",
@@ -67,7 +71,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 4.5,
     inStock: true,
-    categories: ["Games", "Nintendo Switch"],
+    productType: "Games",
+    categories: ["Nintendo Switch"],
   },
   {
     name: "Pokémon Violet - Nintendo Switch, Nintendo Switch – OLED Model, Nintendo Switch Lite",
@@ -81,7 +86,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 4.5,
     inStock: true,
-    categories: ["Games", "Nintendo Switch"],
+    productType: "Games",
+    categories: ["Nintendo Switch"],
   },
   {
     name: "Microsoft - Xbox Series X 1TB Console - Black",
@@ -95,7 +101,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 5,
     inStock: false,
-    categories: ["Consoles", "Xbox"],
+    productType: "Consoles",
+    categories: ["Xbox"],
   },
   {
     name: "The Last of Us Part I - PlayStation 5",
@@ -109,7 +116,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 5,
     inStock: false,
-    categories: ["Games", "Playstation 5"],
+    productType: "Games",
+    categories: ["Playstation 5"],
   },
   {
     name: "Resident Evil 4 Standard Edition - PlayStation 5",
@@ -123,7 +131,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 5,
     inStock: true,
-    categories: ["Games", "Playstation 5"],
+    productType: "Games",
+    categories: ["Playstation 5"],
   },
   {
     name: "Resident Evil 4 Standard Edition - Xbox Series X",
@@ -137,7 +146,8 @@ const SHOP_DATA = [
     onSale: true,
     rating: 5,
     inStock: true,
-    categories: ["Games", "Xbox"],
+    productType: "Games",
+    categories: ["Xbox"],
   },
   {
     name: "Marvel's Spider-Man 2 Launch Edition - PlayStation 5",
@@ -151,7 +161,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 5,
     inStock: true,
-    categories: ["Games", "Playstation 5"],
+    productType: "Games",
+    categories: ["Playstation 5"],
   },
   {
     name: "Call of Duty: Modern Warfare III Cross-Gen Bundle Edition - Xbox Series X, Xbox One",
@@ -165,7 +176,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 3,
     inStock: true,
-    categories: ["Games", "Xbox"],
+    productType: "Games",
+    categories: ["Xbox"],
   },
   {
     name: "Call of Duty: Modern Warfare III Standard Edition - PlayStation 5",
@@ -179,7 +191,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 4,
     inStock: true,
-    categories: ["Games", "Playstation 5"],
+    productType: "Games",
+    categories: ["Playstation 5"],
   },
   {
     name: "The Legend of Zelda: Tears of the Kingdom Standard Edition - Nintendo Switch, Nintendo Switch – OLED Model, Nintendo Switch Lite",
@@ -193,7 +206,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 5,
     inStock: true,
-    categories: ["Games", "Nintendo Switch"],
+    productType: "Games",
+    categories: ["Nintendo Switch"],
   },
   {
     name: "Madden NFL 24 Standard Edition - Xbox Series X, Xbox One",
@@ -207,7 +221,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 4.5,
     inStock: true,
-    categories: ["Games", "Xbox"],
+    productType: "Games",
+    categories: ["Xbox"],
   },
   {
     name: "Final Fantasy XVI Standard Edition - PlayStation 5",
@@ -221,7 +236,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 4.5,
     inStock: true,
-    categories: ["Games", "Playstation 5"],
+    productType: "Games",
+    categories: ["Playstation 5"],
   },
   {
     name: "Dead Space - PlayStation 5",
@@ -235,7 +251,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 5,
     inStock: false,
-    categories: ["Games", "Playstation 5"],
+    productType: "Games",
+    categories: ["Playstation 5"],
   },
   {
     name: "Star Wars Jedi: Survivor Standard Edition - Xbox Series X",
@@ -249,7 +266,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 4.5,
     inStock: true,
-    categories: ["Games", "Xbox"],
+    productType: "Games",
+    categories: ["Xbox"],
   },
   {
     name: "Super Mario Bros. Wonder - Nintendo Switch, Nintendo Switch – OLED Model, Nintendo Switch Lite",
@@ -263,7 +281,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 5,
     inStock: true,
-    categories: ["Games", "Nintendo Switch"],
+    productType: "Games",
+    categories: ["Nintendo Switch"],
   },
   {
     name: "Sony - PlayStation 5 - DualSense Wireless Controller - White",
@@ -277,7 +296,8 @@ const SHOP_DATA = [
     onSale: true,
     rating: 5,
     inStock: true,
-    categories: ["Accessories", "Playstation 5"],
+    productType: "Accessories",
+    categories: ["Playstation 5"],
   },
   {
     name: "HP OMEN - 27 IPS LED QHD 240Hz FreeSync and G-SYNC Compatible Gaming Monitor with HDR (DisplayPort, HDMI, USB) - Black",
@@ -291,6 +311,7 @@ const SHOP_DATA = [
     onSale: true,
     rating: 5,
     inStock: true,
+    productType: "Accessories",
     categories: ["PC"],
   },
   {
@@ -305,6 +326,7 @@ const SHOP_DATA = [
     onSale: true,
     rating: 5,
     inStock: true,
+    productType: "Accessories",
     categories: ["PC"],
   },
   {
@@ -319,7 +341,8 @@ const SHOP_DATA = [
     onSale: true,
     rating: 5,
     inStock: true,
-    categories: ["Games", "Nintendo Switch"],
+    productType: "Games",
+    categories: ["Nintendo Switch"],
   },
   {
     name: "Forza Horizon 5 Standard Edition - Xbox One, Xbox Series X",
@@ -333,7 +356,8 @@ const SHOP_DATA = [
     onSale: true,
     rating: 5,
     inStock: true,
-    categories: ["Games", "Xbox"],
+    productType: "Games",
+    categories: ["Xbox"],
   },
   {
     name: "SteelSeries - Arctis 9 Wireless Gaming Headset for PC, PS5, and PS4 - Black",
@@ -347,7 +371,8 @@ const SHOP_DATA = [
     onSale: true,
     rating: 4,
     inStock: true,
-    categories: ["Accessories", "Playstation 5", "PC"],
+    productType: "Accessories",
+    categories: ["Playstation 5", "PC"],
   },
   {
     name: "Nintendo - Nintendo 64 Console",
@@ -361,7 +386,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 4,
     inStock: false,
-    categories: ["Consoles", "Retro"],
+    productType: "Consoles",
+    categories: ["Retro"],
   },
   {
     name: "Sony - PlayStation 2 Console",
@@ -375,7 +401,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 4.5,
     inStock: true,
-    categories: ["Consoles", "Retro"],
+    productType: "Consoles",
+    categories: ["Retro"],
   },
   {
     name: "Nintendo - Nintendo 3DS",
@@ -389,7 +416,8 @@ const SHOP_DATA = [
     onSale: false,
     rating: 4.5,
     inStock: true,
-    categories: ["Consoles", "Handheld", "Retro"],
+    productType: "Consoles",
+    categories: ["Handheld", "Retro"],
   },
   {
     name: "ASUS - ROG Ally 7 120Hz FHD 1080p Gaming Handheld - AMD Ryzen Z1 Extreme Processor - 512GB - White",
@@ -403,7 +431,8 @@ const SHOP_DATA = [
     onSale: true,
     rating: 4.5,
     inStock: true,
-    categories: ["Consoles", "Handheld"],
+    productType: "Consoles",
+    categories: ["Handheld"],
   },
   {
     name: "Street Fighter 6 Standard Edition - Xbox Series X",
@@ -417,7 +446,8 @@ const SHOP_DATA = [
     onSale: true,
     rating: 4.5,
     inStock: true,
-    categories: ["Games", "Xbox"],
+    productType: "Games",
+    categories: ["Xbox"],
   },
   {
     name: "Grand Theft Auto V Premium Edition - PlayStation 4, PlayStation 5",
@@ -431,7 +461,8 @@ const SHOP_DATA = [
     onSale: true,
     rating: 4.5,
     inStock: true,
-    categories: ["Games", "Playstation 5"],
+    productType: "Games",
+    categories: ["Playstation 5"],
   },
 ];
 
