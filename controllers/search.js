@@ -25,7 +25,7 @@ const createSearchAggregation = async (
   inStock,
   freeShipping,
   productType,
-  category,
+  categories,
   minPrice,
   maxPrice
 ) => {
@@ -82,7 +82,7 @@ const createSearchAggregation = async (
 
   const categoryObject = {
     text: {
-      query: category,
+      query: categories,
       path: "categories",
     },
   };
@@ -111,7 +111,7 @@ const createSearchAggregation = async (
     filterArray.push(shippingObject);
   }
 
-  if (category.length !== 0) {
+  if (categories.length !== 0) {
     mustArray.push(categoryObject);
   }
 
@@ -171,9 +171,15 @@ export const getProducts = async (req, res) => {
   const inStock = /true/.test(req.query.inStock);
   const freeShipping = /true/.test(req.query.freeShip);
   const productType = req.query.productType ? req.query.productType : "All";
-  const categories = req.query.categories ? req.query.categories : [];
-  const minPrice = req.query.minPrice ? req.query.minPrice : 0;
-  const maxPrice = req.query.maxPrice ? req.query.maxPrice : 10000;
+  const minPrice = req.query.minPrice ? parseInt(req.query.minPrice) : 0;
+  const maxPrice = req.query.maxPrice ? parseInt(req.query.maxPrice) : 10000;
+
+  let categories;
+
+  if (req.query.categories) {
+    categories = req.query.categories.split();
+  } else categories = [];
+
   const limit = 8;
   const result = {};
   let params = "";
@@ -204,12 +210,13 @@ export const getProducts = async (req, res) => {
     if (freeShipping) params += "&freeShip=true";
     if (inStock) params += "&inStock=true";
     if (productType !== "All") params += "&productType=" + productType;
-    if (minPrice > 0) params += "&minPrice=" + minPrice;
-    if (maxPrice < 10000) params += "&maxPrice=" + maxPrice;
 
     categories.forEach((element) => {
       params += "&categories=" + element;
     });
+
+    if (minPrice > 0) params += "&minPrice=" + minPrice;
+    if (maxPrice < 10000) params += "&maxPrice=" + maxPrice;
 
     result.path = params;
 
