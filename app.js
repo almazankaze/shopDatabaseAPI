@@ -5,6 +5,7 @@ import cors from "cors";
 
 import products from "./routes/products.js";
 import search from "./routes/search.js";
+import AppError from "./utils/AppError.js";
 
 const app = express();
 dotenv.config();
@@ -18,6 +19,16 @@ app.use("/search", search);
 
 app.get("/", (req, res) => {
   res.send("APP RUNNING!");
+});
+
+app.all("*", (req, res, next) => {
+  next(new AppError("Page Not Found", 404));
+});
+
+app.use((err, req, res, next) => {
+  const { status = 500 } = err;
+  if (!err.message) err.message = "Oh No, Something Went Wrong!";
+  res.status(status).json({ status: status, message: err.message });
 });
 
 const PORT = process.env.PORT || 5000;
