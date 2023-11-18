@@ -21,7 +21,6 @@ const newProduct = {
     original: 59.99,
   },
   onSale: false,
-  rating: 5,
   inStock: true,
   productType: "Games",
   categories: ["Nintendo Switch"],

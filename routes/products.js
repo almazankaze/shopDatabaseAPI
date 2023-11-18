@@ -7,6 +7,7 @@ import {
 } from "../controllers/products.js";
 
 import catchAsync from "../utils/catchAsync.js";
+import { validateProduct } from "../middlewares/product.js";
 
 const productsRouter = express.Router();
 

@@ -11,10 +11,16 @@ const ProductSchema = new Schema({
     original: { type: Number, required: true, min: 0 },
   },
   onSale: { type: Boolean, required: true },
-  rating: { type: Number, default: 0, min: 0, max: 5 },
-  inStock: { type: Boolean, default: false },
+  inStock: { type: Boolean, required: true },
   productType: { type: String, required: true },
   categories: { type: [String], required: true },
+  rating: { type: Number, default: 0 },
+  reviews: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Review",
+    },
+  ],
 });
 
 ProductSchema.methods.toggleOnSale = function (isSale, newPrice) {
@@ -32,6 +38,6 @@ ProductSchema.statics.fireSale = function () {
   );
 };
 
-const Product = mongoose.model("product", ProductSchema);
+const Product = mongoose.model("Product", ProductSchema);
 
 export default Product;

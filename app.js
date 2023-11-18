@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 import products from "./routes/products.js";
+import reviews from "./routes/reviews.js";
 import search from "./routes/search.js";
 import AppError from "./utils/AppError.js";
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/products", products);
+app.use("/products/:id/reviews", reviews);
 app.use("/search", search);
 
 app.get("/", (req, res) => {
