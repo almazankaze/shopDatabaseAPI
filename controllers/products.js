@@ -13,11 +13,15 @@ export const getSingleProduct = async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(id))
     throw new AppError(`No product with id ${id} found`, 404);
 
-  const product = await Product.findById(id);
+  const product = await Product.findById(id).populate("reviews");
 
   if (!product) throw new AppError(`No product with id ${id} found`, 404);
 
   res.status(200).json(product);
+};
+
+export const createProduct = async (req, res) => {
+  const product = new Product(req.body.product);
 };
 
 export const updateProduct = async (req, res) => {

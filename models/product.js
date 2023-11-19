@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import Review from "./review.js";
 const Schema = mongoose.Schema;
 
 const ProductSchema = new Schema({
@@ -21,6 +22,16 @@ const ProductSchema = new Schema({
       ref: "Review",
     },
   ],
+});
+
+ProductSchema.post("findOneAndDelete", async function (doc) {
+  if (doc) {
+    await Review.deleteMany({
+      _id: {
+        $in: doc.reviews,
+      },
+    });
+  }
 });
 
 ProductSchema.methods.toggleOnSale = function (isSale, newPrice) {
