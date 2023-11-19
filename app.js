@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
+import session from "express-session";
 
 import products from "./routes/products.js";
 import reviews from "./routes/reviews.js";
@@ -14,6 +15,20 @@ dotenv.config();
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+
+const sessionConfig = {
+  name: "session",
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    httpOnly: true,
+    // secure: true,
+    expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+    maxAge: 1000 * 60 * 60 * 24 * 7,
+  },
+};
+//app.use(session(sessionConfig));
 
 app.use("/products", products);
 app.use("/products/:id/reviews", reviews);
