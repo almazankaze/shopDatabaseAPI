@@ -13,7 +13,7 @@ export const createReview = async (req, res) => {
 
   if (!product) throw new AppError(`No product with id ${id} found`, 404);
 
-  const review = new Review(req.body.review);
+  const review = new Review(req.body);
 
   product.reviews.push(review);
   await review.save();
