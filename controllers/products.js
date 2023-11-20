@@ -7,6 +7,11 @@ export const getProducts = async (req, res) => {
   res.status(200).json(products);
 };
 
+export const getOnSale = async (req, res) => {
+  const products = await Product.find({ onSale: true }).limit(8);
+  res.status(200).json(products);
+};
+
 export const getSingleProduct = async (req, res) => {
   const { id } = req.params;
 
