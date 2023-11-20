@@ -18,7 +18,7 @@ app.use(cors());
 
 const sessionConfig = {
   name: "session",
-  secret: process.env.SECRET,
+  //secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: {

@@ -11,7 +11,7 @@ import {
 import catchAsync from "../utils/catchAsync.js";
 import { validateProduct } from "../middlewares/product.js";
 
-const productsRouter = express.Router();
+const productsRouter = express.Router({ mergeParams: true });
 
 productsRouter.get("/", catchAsync(getProducts));
 productsRouter.get("/onSale", catchAsync(getOnSale));
