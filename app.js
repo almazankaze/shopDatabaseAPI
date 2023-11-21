@@ -2,12 +2,17 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
+import passport from "passport";
+import LocalStrategy from "passport-local";
 import session from "express-session";
 
 import products from "./routes/products.js";
 import reviews from "./routes/reviews.js";
 import search from "./routes/search.js";
+import users from "./routes/users.js";
 import AppError from "./utils/AppError.js";
+
+import User from "./models/user.js";
 
 const app = express();
 dotenv.config();
@@ -28,11 +33,18 @@ const sessionConfig = {
     maxAge: 1000 * 60 * 60 * 24 * 7,
   },
 };
+
 //app.use(session(sessionConfig));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use("/products", products);
 app.use("/products/:id/reviews", reviews);
 app.use("/search", search);
+app.use("/users", users);
 
 app.get("/", (req, res) => {
   res.send("APP RUNNING!");
