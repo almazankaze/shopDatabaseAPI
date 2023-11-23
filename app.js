@@ -48,7 +48,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
-  console.log(req.session);
+
   next();
 });
 
@@ -67,7 +67,6 @@ app.all("*", (req, res, next) => {
 
 app.use((err, req, res, next) => {
   const { status = 500 } = err;
-
   if (!err.message) err.message = "Oh No, Something Went Wrong!";
   res.status(status).json({ status: status, message: err.message });
 });
