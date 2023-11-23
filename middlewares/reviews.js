@@ -1,3 +1,4 @@
+import Review from "../models/review.js";
 import AppError from "../utils/AppError.js";
 
 export const validateReview = (req, res, next) => {
@@ -8,4 +9,22 @@ export const validateReview = (req, res, next) => {
   } else {
     next();
   }
+};
+
+export const isAuthor = async (req, res, next) => {
+  const { id, reviewId } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id))
+    throw new AppError(`No product with id ${id} found`, 404);
+
+  if (!mongoose.Types.ObjectId.isValid(reviewId))
+    throw new AppError(`No review with id ${reviewId} found`, 404);
+
+  const review = await Review.findById(reviewId);
+
+  if (!review.author.equals(req.user._id)) {
+    const mess = "Unauthorized action";
+    throw new AppError(mess, 401);
+  }
+  next();
 };

@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import express from "express";
 import SHOP_DATA from "./products.js";
 import Product from "./models/product.js";
+import Review from "./models/review.js";
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -14,6 +15,7 @@ app.use(cors());
 
 const seedDB = async () => {
   await Product.deleteMany({});
+  await Review.deleteMany({});
   for (let i = 0; i < SHOP_DATA.length; i++) {
     const product = new Product({
       ...SHOP_DATA[i],

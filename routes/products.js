@@ -14,10 +14,14 @@ import { isLoggedIn } from "../middlewares/users.js";
 
 const productsRouter = express.Router({ mergeParams: true });
 
-productsRouter.get("/", isLoggedIn, catchAsync(getProducts));
+productsRouter
+  .get("/", isLoggedIn, catchAsync(getProducts))
+  .post("/", validateProduct, catchAsync(createProduct));
+
 productsRouter.get("/onSale", catchAsync(getOnSale));
-productsRouter.post("/", validateProduct, catchAsync(createProduct));
-productsRouter.get("/:id", catchAsync(getSingleProduct));
-productsRouter.put("/:id", updateProduct);
+
+productsRouter
+  .get("/:id", catchAsync(getSingleProduct))
+  .put("/:id", updateProduct);
 
 export default productsRouter;

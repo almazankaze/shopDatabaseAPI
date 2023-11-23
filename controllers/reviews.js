@@ -14,6 +14,7 @@ export const createReview = async (req, res) => {
   if (!product) throw new AppError(`No product with id ${id} found`, 404);
 
   const review = new Review(req.body);
+  review.author = req.user._id;
 
   product.reviews.push(review);
   await review.save();
@@ -23,12 +24,6 @@ export const createReview = async (req, res) => {
 
 export const deleteReview = async (req, res) => {
   const { id, reviewId } = req.params;
-
-  if (!mongoose.Types.ObjectId.isValid(id))
-    throw new AppError(`No product with id ${id} found`, 404);
-
-  if (!mongoose.Types.ObjectId.isValid(reviewId))
-    throw new AppError(`No review with id ${reviewId} found`, 404);
 
   await Product.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
   await Review.findByIdAndDelete(reviewId);
