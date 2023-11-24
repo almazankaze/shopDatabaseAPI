@@ -12,7 +12,7 @@ export const isLoggedIn = (req, res, next) => {
   }
 
   try {
-    const token = req.headers.authorization?.split(" ")[1];
+    const token = req.headers.authorization;
 
     if (!token) {
       throw new AppError("Do not have access", 401);

@@ -19,6 +19,7 @@ export const createReview = async (req, res) => {
   product.reviews.push(review);
   await review.save();
   await product.save();
+
   res.status(201).json(review);
 };
 
