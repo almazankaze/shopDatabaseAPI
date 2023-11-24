@@ -5,6 +5,7 @@ import cors from "cors";
 import passport from "passport";
 import LocalStrategy from "passport-local";
 import session from "express-session";
+import mongoSanitize from "express-mongo-sanitize";
 
 import products from "./routes/products.js";
 import reviews from "./routes/reviews.js";
@@ -20,9 +21,10 @@ dotenv.config();
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+app.use(mongoSanitize());
 
 const sessionConfig = {
-  name: "session",
+  name: "trust-alma",
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false,
@@ -49,6 +51,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
 
+  console.log(req.params);
   next();
 });
 
