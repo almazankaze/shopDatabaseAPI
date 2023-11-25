@@ -15,12 +15,15 @@ export const createReview = async (req, res) => {
 
   const review = new Review(req.body);
   review.author = req.user._id;
+  review.date = new Date().toISOString();
 
   product.reviews.push(review);
   await review.save();
   await product.save();
 
-  res.status(201).json(review);
+  const updatedReview = await Review.findById(review._id).populate("author");
+
+  res.status(201).json(updatedReview);
 };
 
 export const deleteReview = async (req, res) => {

@@ -15,7 +15,7 @@ import { isLoggedIn } from "../middlewares/users.js";
 const productsRouter = express.Router({ mergeParams: true });
 
 productsRouter
-  .get("/", isLoggedIn, catchAsync(getProducts))
+  .get("/", catchAsync(getProducts))
   .post("/", validateProduct, catchAsync(createProduct));
 
 productsRouter.get("/onSale", catchAsync(getOnSale));
