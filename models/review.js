@@ -5,8 +5,8 @@ const ReviewSchema = new Schema({
   body: { type: String, required: true },
   rating: { type: Number, default: 0, min: 0, max: 5 },
   date: {
-    type: Date,
-    default: new Date(),
+    type: String,
+    default: "",
   },
   author: {
     type: Schema.Types.ObjectId,

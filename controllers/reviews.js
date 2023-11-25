@@ -15,7 +15,9 @@ export const createReview = async (req, res) => {
 
   const review = new Review(req.body);
   review.author = req.user._id;
-  review.date = new Date().toISOString();
+
+  const date = new Date().toISOString().slice(0, 10);
+  review.date = date;
 
   product.reviews.push(review);
   await review.save();
