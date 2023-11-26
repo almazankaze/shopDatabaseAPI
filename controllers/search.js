@@ -5,6 +5,8 @@ const projectStage = {
     _id: 1,
     score: { $meta: "searchScore" },
     name: 1,
+    shortname: 1,
+    desc: 1,
     img: 1,
     price: 1,
     onSale: 1,

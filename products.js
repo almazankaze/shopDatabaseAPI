@@ -3,7 +3,12 @@ const SHOP_DATA = [
     name: "Fire Emblem Engage - Nintendo Switch, Nintendo Switch (OLED Model), Nintendo Switch Lite",
     shortname: "Fire Emblem Engage",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700977059/testWeb/mbpywpk4ssomkf8q9mtu.png",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972187/testWeb/nobslbizeymqilovq4nv.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972187/testWeb/uvzingjjudbnlzpayhft.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/kjbjxhabhogsim6wcqjn.jpg",
+    ],
     price: {
       current: 59.99,
       original: 59.99,
@@ -18,7 +23,12 @@ const SHOP_DATA = [
     name: "Nintendo - Switch – OLED Model w/ White Joy-Con - White",
     shortname: "Nintendo Switch",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 349.99,
       original: 349.99,
@@ -33,7 +43,12 @@ const SHOP_DATA = [
     name: "Sony - PlayStation 5 Console",
     shortname: "Sony Playstation 5",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/ol7ode8off3b7os2u6cd.png",
+    ],
     price: {
       current: 499.99,
       original: 499.99,
@@ -42,13 +57,18 @@ const SHOP_DATA = [
     rating: 5,
     inStock: false,
     productType: "Consoles",
-    categories: ["Playstation 5"],
+    categories: ["Playstation"],
   },
   {
     name: "Logitech - G203 LIGHTSYNC Wired Optical Gaming Mouse with 8,000 DPI sensor - Black",
     shortname: "Logitech Wired Gaming Mouse",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/jnauclkdkmruaisvgpwp.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 37,
       original: 50,
@@ -63,7 +83,12 @@ const SHOP_DATA = [
     name: "Pokémon Scarlet - Nintendo Switch, Nintendo Switch – OLED Model, Nintendo Switch Lite",
     shortname: "Pokemon Scarlet",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 59.99,
       original: 59.99,
@@ -78,7 +103,12 @@ const SHOP_DATA = [
     name: "Pokémon Violet - Nintendo Switch, Nintendo Switch – OLED Model, Nintendo Switch Lite",
     shortname: "Pokemon Violet",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 59.99,
       original: 59.99,
@@ -93,7 +123,12 @@ const SHOP_DATA = [
     name: "Microsoft - Xbox Series X 1TB Console - Black",
     shortname: "Xbox Series X",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 499.99,
       original: 499.99,
@@ -108,7 +143,12 @@ const SHOP_DATA = [
     name: "The Last of Us Part I - PlayStation 5",
     shortname: "The Last of Us",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 69.99,
       original: 69.99,
@@ -117,13 +157,18 @@ const SHOP_DATA = [
     rating: 5,
     inStock: false,
     productType: "Games",
-    categories: ["Playstation 5"],
+    categories: ["Playstation"],
   },
   {
     name: "Resident Evil 4 Standard Edition - PlayStation 5",
     shortname: "Resident Evil 4",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 59.99,
       original: 59.99,
@@ -132,13 +177,18 @@ const SHOP_DATA = [
     rating: 5,
     inStock: true,
     productType: "Games",
-    categories: ["Playstation 5"],
+    categories: ["Playstation"],
   },
   {
     name: "Resident Evil 4 Standard Edition - Xbox Series X",
     shortname: "Resident Evil 4",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/n1bxm8dbcii1rxdyvby1.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 42.99,
       original: 59.99,
@@ -153,7 +203,12 @@ const SHOP_DATA = [
     name: "Marvel's Spider-Man 2 Launch Edition - PlayStation 5",
     shortname: "Marvel's Spider-Man 2",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 69.99,
       original: 69.99,
@@ -162,13 +217,18 @@ const SHOP_DATA = [
     rating: 5,
     inStock: true,
     productType: "Games",
-    categories: ["Playstation 5"],
+    categories: ["Playstation"],
   },
   {
     name: "Call of Duty: Modern Warfare III Cross-Gen Bundle Edition - Xbox Series X, Xbox One",
     shortname: "Call of Duty: Modern Warfare III",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 69.99,
       original: 69.99,
@@ -183,7 +243,12 @@ const SHOP_DATA = [
     name: "Call of Duty: Modern Warfare III Standard Edition - PlayStation 5",
     shortname: "Call of Duty: Modern Warfare III",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 69.99,
       original: 69.99,
@@ -192,13 +257,18 @@ const SHOP_DATA = [
     rating: 4,
     inStock: true,
     productType: "Games",
-    categories: ["Playstation 5"],
+    categories: ["Playstation"],
   },
   {
     name: "The Legend of Zelda: Tears of the Kingdom Standard Edition - Nintendo Switch, Nintendo Switch – OLED Model, Nintendo Switch Lite",
     shortname: "The Legend of Zelda: Tears of the Kingdom",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 59.99,
       original: 59.99,
@@ -213,7 +283,12 @@ const SHOP_DATA = [
     name: "Madden NFL 24 Standard Edition - Xbox Series X, Xbox One",
     shortname: "Madden NFL 24",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 69.99,
       original: 69.99,
@@ -228,7 +303,12 @@ const SHOP_DATA = [
     name: "Final Fantasy XVI Standard Edition - PlayStation 5",
     shortname: "Final Fantasy XVI",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 69.99,
       original: 69.99,
@@ -237,13 +317,18 @@ const SHOP_DATA = [
     rating: 4.5,
     inStock: true,
     productType: "Games",
-    categories: ["Playstation 5"],
+    categories: ["Playstation"],
   },
   {
     name: "Dead Space - PlayStation 5",
     shortname: "Dead Space",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 69.99,
       original: 69.99,
@@ -252,13 +337,18 @@ const SHOP_DATA = [
     rating: 5,
     inStock: false,
     productType: "Games",
-    categories: ["Playstation 5"],
+    categories: ["Playstation"],
   },
   {
     name: "Star Wars Jedi: Survivor Standard Edition - Xbox Series X",
     shortname: "Star Wars Jedi: Survivor",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 69.99,
       original: 69.99,
@@ -273,7 +363,12 @@ const SHOP_DATA = [
     name: "Super Mario Bros. Wonder - Nintendo Switch, Nintendo Switch – OLED Model, Nintendo Switch Lite",
     shortname: "Super Mario Bros. Wonder",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 59.99,
       original: 59.99,
@@ -288,7 +383,12 @@ const SHOP_DATA = [
     name: "Sony - PlayStation 5 - DualSense Wireless Controller - White",
     shortname: "Ps5 - Wireless Controller",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/ol7ode8off3b7os2u6cd.png",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 49.99,
       original: 69.99,
@@ -297,13 +397,18 @@ const SHOP_DATA = [
     rating: 5,
     inStock: true,
     productType: "Accessories",
-    categories: ["Playstation 5"],
+    categories: ["Playstation"],
   },
   {
     name: "HP OMEN - 27 IPS LED QHD 240Hz FreeSync and G-SYNC Compatible Gaming Monitor with HDR (DisplayPort, HDMI, USB) - Black",
     shortname: "HP OMEN Monitor",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 299.99,
       original: 429.99,
@@ -318,7 +423,12 @@ const SHOP_DATA = [
     name: "Dell - S2721HGF 27 Gaming - LED Curved FHD FreeSync and G-SYNC Compatible Monitor (DisplayPort, HDMI) - Black",
     shortname: "Dell S2721HGF Gaming Monitor",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 149.99,
       original: 259.99,
@@ -333,7 +443,12 @@ const SHOP_DATA = [
     name: "Mario Kart 8 Deluxe - Nintendo Switch",
     shortname: "Mario Kart 8 Deluxe",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/ta864p6mmgeozzhkui8b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 48.99,
       original: 59.99,
@@ -348,7 +463,12 @@ const SHOP_DATA = [
     name: "Forza Horizon 5 Standard Edition - Xbox One, Xbox Series X",
     shortname: "Forza Horizon 5 Standard Edition",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 47.99,
       original: 59.99,
@@ -363,7 +483,12 @@ const SHOP_DATA = [
     name: "SteelSeries - Arctis 9 Wireless Gaming Headset for PC, PS5, and PS4 - Black",
     shortname: "SteelSeries Wireless Headset",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/tazxgdbfumkbrxbsf48y.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 99.99,
       original: 199.99,
@@ -372,13 +497,18 @@ const SHOP_DATA = [
     rating: 4,
     inStock: true,
     productType: "Accessories",
-    categories: ["Playstation 5", "PC"],
+    categories: ["Playstation", "PC"],
   },
   {
     name: "Nintendo - Nintendo 64 Console",
     shortname: "Nintendo 64",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/dsizziwcb8xgqdtxl1md.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 129.99,
       original: 129.99,
@@ -393,7 +523,12 @@ const SHOP_DATA = [
     name: "Sony - PlayStation 2 Console",
     shortname: "PlayStation 2",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 129.99,
       original: 129.99,
@@ -402,13 +537,18 @@ const SHOP_DATA = [
     rating: 4.5,
     inStock: true,
     productType: "Consoles",
-    categories: ["Retro"],
+    categories: ["Retro", "Playstation"],
   },
   {
     name: "Nintendo - Nintendo 3DS",
     shortname: "Nintendo 3DS",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 99.99,
       original: 99.99,
@@ -423,7 +563,12 @@ const SHOP_DATA = [
     name: "ASUS - ROG Ally 7 120Hz FHD 1080p Gaming Handheld - AMD Ryzen Z1 Extreme Processor - 512GB - White",
     shortname: "Asus Gaming Handheld",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 619.99,
       original: 699.99,
@@ -438,7 +583,12 @@ const SHOP_DATA = [
     name: "Street Fighter 6 Standard Edition - Xbox Series X",
     shortname: "Street Fighter 6",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 45.99,
       original: 59.99,
@@ -453,7 +603,12 @@ const SHOP_DATA = [
     name: "Grand Theft Auto V Premium Edition - PlayStation 4, PlayStation 5",
     shortname: "Grand Theft Auto V",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
-    img: "",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972183/testWeb/nd4ce5dpljajjj4tkb3b.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
     price: {
       current: 20.99,
       original: 29.99,
@@ -462,7 +617,70 @@ const SHOP_DATA = [
     rating: 4.5,
     inStock: true,
     productType: "Games",
-    categories: ["Playstation 5"],
+    categories: ["Playstation"],
+  },
+
+  {
+    name: "NieR: Automata Become As Gods Edition - PlayStation 4",
+    shortname: "NieR: Automata",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/u6hop2m8w78ak6un4ebj.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/urhsddejq06eddyfuugz.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
+    price: {
+      current: 39.99,
+      original: 39.99,
+    },
+    onSale: false,
+    rating: 4.5,
+    inStock: true,
+    productType: "Games",
+    categories: ["Playstation"],
+  },
+
+  {
+    name: "The Last of Us Part II Standard Edition - PlayStation 4, PlayStation 5",
+    shortname: "The Last of Us Part II",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972185/testWeb/isbzelm2mhpxboh1rc2d.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/urhsddejq06eddyfuugz.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
+    price: {
+      current: 39.99,
+      original: 39.99,
+    },
+    onSale: false,
+    rating: 5,
+    inStock: true,
+    productType: "Games",
+    categories: ["Playstation"],
+  },
+
+  {
+    name: "Devil May Cry 5 Standard Edition - PlayStation 4",
+    shortname: "Devil May Cry 5",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa, odio, qui praesentium dignissimos eaque dolorum porro alias neque, eius animi ipsa voluptates. Optio repellat tempora voluptas, dolores ipsam ad!",
+    img: [
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972127/testWeb/ftchzl7frtiiffaewtrh.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/k0yyk74pk3hypoqkuab8.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972186/testWeb/ipcrln2wdcglkw9got13.jpg",
+      "https://res.cloudinary.com/dp8afa9xy/image/upload/v1700972184/testWeb/xntb0zk2cutzuqcn29a3.jpg",
+    ],
+    price: {
+      current: 39.99,
+      original: 39.99,
+    },
+    onSale: false,
+    rating: 4.5,
+    inStock: true,
+    productType: "Games",
+    categories: ["Playstation"],
   },
 ];
 
