@@ -16,6 +16,7 @@ const ProductSchema = new Schema({
   productType: { type: String, required: true },
   categories: { type: [String], required: true },
   rating: { type: Number, default: 0 },
+  totalRating: { type: Number, default: 0 },
   reviews: [
     {
       type: Schema.Types.ObjectId,
