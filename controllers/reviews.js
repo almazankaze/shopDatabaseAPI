@@ -34,5 +34,11 @@ export const deleteReview = async (req, res) => {
   await Product.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
   await Review.findByIdAndDelete(reviewId);
 
-  res.status(200).json({ status: 200, message: "Review removed successfully" });
+  res
+    .status(200)
+    .json({
+      status: 200,
+      _id: reviewId,
+      message: "Review removed successfully",
+    });
 };
