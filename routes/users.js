@@ -18,6 +18,6 @@ userRouter.post(
   catchAsync(login)
 );
 
-userRouter.get("/logout", logout);
+userRouter.get("/logout", catchAsync(logout));
 
 export default userRouter;

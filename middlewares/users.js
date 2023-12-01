@@ -7,11 +7,11 @@ dotenv.config();
 const secret = process.env.SECRET;
 
 export const isLoggedIn = (req, res, next) => {
-  if (!req.isAuthenticated()) {
-    throw new AppError("must be logged in", 401);
-  }
-
   try {
+    if (!req.isAuthenticated()) {
+      throw new AppError("must be logged in", 401);
+    }
+
     const token = req.headers.authorization;
 
     if (!token) {
