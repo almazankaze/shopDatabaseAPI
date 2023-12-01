@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import Review from "../models/review.js";
 import AppError from "../utils/AppError.js";
 
@@ -23,8 +24,6 @@ export const isAuthor = async (req, res, next) => {
   const review = await Review.findById(reviewId);
 
   if (!review.author.equals(req.user._id)) {
-    const mess = "Unauthorized action";
-    throw new AppError(mess, 401);
-  }
-  next();
+    throw new AppError("Unauthorized action", 401);
+  } else next();
 };

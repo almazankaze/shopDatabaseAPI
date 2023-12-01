@@ -13,7 +13,7 @@ reviewsRouter.post("/", isLoggedIn, validateReview, catchAsync(createReview));
 reviewsRouter.delete(
   "/:reviewId",
   isLoggedIn,
-  isAuthor,
+  catchAsync(isAuthor),
   catchAsync(deleteReview)
 );
 
