@@ -6,6 +6,8 @@ import passport from "passport";
 import LocalStrategy from "passport-local";
 import session from "express-session";
 import mongoSanitize from "express-mongo-sanitize";
+import MongoStore from "connect-mongo";
+import helmet from "helmet";
 
 import products from "./routes/products.js";
 import reviews from "./routes/reviews.js";
@@ -22,6 +24,18 @@ app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors({ credentials: true, origin: true }));
 app.use(mongoSanitize());
+
+const store = MongoStore.create({
+  mongoUrl: process.env.CONNECTION,
+  touchAfter: 24 * 60 * 60,
+  crypto: {
+    secret: process.env.STORESECRET,
+  },
+});
+
+store.on("error", function (e) {
+  console.log("session store error");
+});
 
 const sessionConfig = {
   name: "trust-alma",
@@ -42,6 +56,8 @@ if (app.get("env") === "production") {
 }
 
 app.use(session(sessionConfig));
+app.use(helmet());
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
