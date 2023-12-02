@@ -6,10 +6,7 @@ import AppError from "../utils/AppError.js";
 export const createReview = async (req, res) => {
   const { id } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(id))
-    throw new AppError(`No product with id ${id} found`, 404);
-
-  const product = await Product.findById(req.params.id);
+  const product = await Product.findById(id);
 
   if (!product) throw new AppError(`No product with id ${id} found`, 404);
 
@@ -34,11 +31,9 @@ export const deleteReview = async (req, res) => {
   await Product.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
   await Review.findByIdAndDelete(reviewId);
 
-  res
-    .status(200)
-    .json({
-      status: 200,
-      _id: reviewId,
-      message: "Review removed successfully",
-    });
+  res.status(200).json({
+    status: 200,
+    _id: reviewId,
+    message: "Review removed successfully",
+  });
 };

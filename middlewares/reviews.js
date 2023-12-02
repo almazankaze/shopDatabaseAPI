@@ -1,6 +1,7 @@
-import mongoose from "mongoose";
+import mongoose, { Mongoose } from "mongoose";
 import Review from "../models/review.js";
 import AppError from "../utils/AppError.js";
+import Product from "../models/product.js";
 
 export const validateReview = (req, res, next) => {
   const { rating, body } = req.body;
@@ -25,5 +26,24 @@ export const isAuthor = async (req, res, next) => {
 
   if (!review.author.equals(req.user._id)) {
     throw new AppError("Unauthorized action", 401);
+  } else next();
+};
+
+export const notPosted = async (req, res, next) => {
+  const { id } = req.params;
+
+  const product = await Product.findById(id).populate({
+    path: "reviews",
+    populate: {
+      path: "author",
+    },
+  });
+
+  const review = product.reviews.find(
+    (review) => review.author.email === req.user.email
+  );
+
+  if (review) {
+    throw new AppError(`User already posted`, 405);
   } else next();
 };
