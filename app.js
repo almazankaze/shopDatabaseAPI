@@ -17,12 +17,31 @@ import AppError from "./utils/AppError.js";
 
 import User from "./models/user.js";
 
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config();
+}
+
 const app = express();
-dotenv.config();
+
+const whitelist = process.env.WHITELISTED_DOMAINS
+  ? process.env.WHITELISTED_DOMAINS.split(",")
+  : [];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+
+  credentials: true,
+};
 
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors({ credentials: true, origin: true }));
+app.use(cors(corsOptions));
 app.use(mongoSanitize());
 
 const store = MongoStore.create({
@@ -47,6 +66,7 @@ const sessionConfig = {
     secure: false,
     expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
     maxAge: 1000 * 60 * 60 * 24 * 7,
+    sameSite: "none",
   },
 };
 
