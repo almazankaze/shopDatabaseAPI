@@ -29,7 +29,7 @@ const store = MongoStore.create({
   mongoUrl: process.env.CONNECTION,
   touchAfter: 24 * 60 * 60,
   crypto: {
-    secret: process.env.STORESECRET,
+    secret: process.env.SECRET,
   },
 });
 
