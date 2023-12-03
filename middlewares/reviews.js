@@ -25,7 +25,7 @@ export const isAuthor = async (req, res, next) => {
   const review = await Review.findById(reviewId);
 
   if (!review.author.equals(req.user._id)) {
-    throw new AppError("Unauthorized action", 401);
+    throw new AppError("Unauthorized action", 403);
   } else next();
 };
 
