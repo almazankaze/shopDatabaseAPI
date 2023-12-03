@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import passport from "passport";
 import LocalStrategy from "passport-local";
 import session from "express-session";
@@ -66,7 +67,7 @@ const sessionConfig = {
     secure: false,
     expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
     maxAge: 1000 * 60 * 60 * 24 * 7,
-    sameSite: "none",
+    //sameSite: "none",
   },
 };
 
@@ -76,6 +77,7 @@ if (app.get("env") === "production") {
 }
 
 app.use(session(sessionConfig));
+app.use(cookieParser(process.env.SECRET));
 app.use(helmet());
 
 app.use(passport.initialize());

@@ -1,4 +1,4 @@
-import mongoose, { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 import Review from "../models/review.js";
 import AppError from "../utils/AppError.js";
 import Product from "../models/product.js";

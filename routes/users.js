@@ -1,7 +1,7 @@
 import express from "express";
 import passport from "passport";
 
-import { register, login, logout } from "../controllers/users.js";
+import { register, login, getUser, logout } from "../controllers/users.js";
 
 import catchAsync from "../utils/catchAsync.js";
 import { validateUserInfo } from "../middlewares/users.js";
@@ -17,6 +17,8 @@ userRouter.post(
   }),
   catchAsync(login)
 );
+
+userRouter.get("/getUser", catchAsync(getUser));
 
 userRouter.get("/logout", catchAsync(logout));
 

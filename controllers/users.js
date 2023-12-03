@@ -1,5 +1,3 @@
-import mongoose from "mongoose";
-import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import User from "../models/user.js";
 import AppError from "../utils/AppError.js";
@@ -17,22 +15,7 @@ export const register = async (req, res) => {
     req.login(registeredUser, (err) => {
       if (err) return next(err);
 
-      const token = jwt.sign(
-        {
-          email: req.user.email,
-          id: req.user._id,
-        },
-        secret,
-        { expiresIn: "1h" }
-      );
-
-      const result = {
-        email: req.user.email,
-        name: req.user.username,
-        _id: req.user._id,
-      };
-
-      return res.status(200).json({ done: true, result, token });
+      return res.status(200).json({ done: true });
     });
   } catch (e) {
     throw new AppError(e.message, 409);
@@ -40,22 +23,11 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  const token = jwt.sign(
-    {
-      email: req.user.email,
-      id: req.user._id,
-    },
-    secret,
-    { expiresIn: "1h" }
-  );
+  res.status(200).json({ done: true });
+};
 
-  const result = {
-    email: req.user.email,
-    name: req.user.username,
-    _id: req.user._id,
-  };
-
-  res.status(200).json({ done: true, result, token });
+export const getUser = async (req, res, next) => {
+  res.json(req.user);
 };
 
 export const logout = async (req, res, next) => {
