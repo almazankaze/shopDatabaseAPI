@@ -1,7 +1,13 @@
 import express from "express";
 import passport from "passport";
 
-import { register, login, getUser, logout } from "../controllers/users.js";
+import {
+  register,
+  login,
+  googleLogin,
+  getUser,
+  logout,
+} from "../controllers/users.js";
 
 import catchAsync from "../utils/catchAsync.js";
 import { validateUserInfo } from "../middlewares/users.js";
@@ -16,6 +22,20 @@ userRouter.post(
     failureMessage: true,
   }),
   catchAsync(login)
+);
+
+userRouter.get(
+  "/google",
+  passport.authenticate("google", {
+    scope: ["profile"],
+    failureMessage: true,
+  })
+);
+
+userRouter.get(
+  "/oauth2/redirect/google",
+  passport.authenticate("google"),
+  googleLogin
 );
 
 userRouter.get("/getUser", catchAsync(getUser));

@@ -5,6 +5,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import LocalStrategy from "passport-local";
+import GoogleStrategy from "passport-google-oauth20";
 import session from "express-session";
 import mongoSanitize from "express-mongo-sanitize";
 import MongoStore from "connect-mongo";
@@ -83,6 +84,20 @@ app.use(helmet());
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
+
+passport.use(
+  new GoogleStrategy(
+    {
+      callbackURL: "/users/oauth2/redirect/google",
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    },
+    (accessToken, refreshToken, profile, done) => {
+      console.log("callback reached");
+    }
+  )
+);
+
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 

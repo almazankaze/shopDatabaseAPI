@@ -13,7 +13,7 @@ export const register = async (req, res) => {
 
       const userData = {
         _id: req.user._id,
-        username: req.body.username,
+        username: req.user.username,
       };
       res.status(200).json(userData);
     });
@@ -25,16 +25,20 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   const userData = {
     _id: req.user._id,
-    username: req.body.username,
+    username: req.user.username,
   };
   res.status(200).json(userData);
+};
+
+export const googleLogin = async (req, res) => {
+  res.status(200).json("login success");
 };
 
 export const getUser = async (req, res, next) => {
   if (req.isAuthenticated()) {
     const userData = {
       _id: req.user._id,
-      username: req.body.username,
+      username: req.user.username,
     };
     res.status(200).json(userData);
   } else {
