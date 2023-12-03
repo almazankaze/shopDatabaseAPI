@@ -31,7 +31,15 @@ export const login = async (req, res) => {
 };
 
 export const getUser = async (req, res, next) => {
-  res.json(req.user);
+  if (req.isAuthenticated()) {
+    const userData = {
+      _id: req.user._id,
+      username: req.body.username,
+    };
+    res.status(200).json(userData);
+  } else {
+    res.status(200).json(null);
+  }
 };
 
 export const logout = async (req, res, next) => {
