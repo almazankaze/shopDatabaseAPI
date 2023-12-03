@@ -1,9 +1,5 @@
-import dotenv from "dotenv";
 import User from "../models/user.js";
 import AppError from "../utils/AppError.js";
-
-dotenv.config();
-const secret = process.env.SECRET;
 
 export const register = async (req, res) => {
   const { email, username, password } = req.body;
@@ -15,7 +11,11 @@ export const register = async (req, res) => {
     req.login(registeredUser, (err) => {
       if (err) return next(err);
 
-      return res.status(200).json({ done: true });
+      const userData = {
+        _id: req.user._id,
+        username: req.body.username,
+      };
+      res.status(200).json(userData);
     });
   } catch (e) {
     throw new AppError(e.message, 409);
@@ -23,7 +23,11 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  res.status(200).json({ done: true });
+  const userData = {
+    _id: req.user._id,
+    username: req.body.username,
+  };
+  res.status(200).json(userData);
 };
 
 export const getUser = async (req, res, next) => {
