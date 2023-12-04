@@ -101,6 +101,7 @@ passport.use(
             email: profile.emails[0].value,
             username: profile.displayName,
             googleId: profile.id,
+            thumbnail: profile._json.image.url,
           })
             .save()
             .then((newUser) => {

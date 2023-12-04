@@ -14,6 +14,7 @@ export const register = async (req, res) => {
       const userData = {
         _id: req.user._id,
         username: req.user.username,
+        thumbnail: req.user.thumbnail,
       };
       res.status(200).json(userData);
     });
@@ -26,6 +27,7 @@ export const login = async (req, res) => {
   const userData = {
     _id: req.user._id,
     username: req.user.username,
+    thumbnail: req.user.thumbnail,
   };
   res.status(200).json(userData);
 };
@@ -34,6 +36,7 @@ export const googleLogin = async (req, res) => {
   const userData = {
     _id: req.user._id,
     username: req.user.username,
+    thumbnail: req.user.thumbnail,
   };
   res.status(200).json(userData);
 };
@@ -43,6 +46,7 @@ export const getUser = async (req, res, next) => {
     const userData = {
       _id: req.user._id,
       username: req.user.username,
+      thumbnail: req.user.thumbnail,
     };
     res.status(200).json(userData);
   } else {
