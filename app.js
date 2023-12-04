@@ -93,13 +93,37 @@ passport.use(
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     },
     (accessToken, refreshToken, profile, done) => {
-      console.log("callback reached");
+      User.findOne({ googleId: profile.id }).then((currentUser) => {
+        if (currentUser) {
+          done(null, currentUser);
+        } else {
+          new User({
+            email: profile.emails[0].value,
+            username: profile.displayName,
+            googleId: profile.id,
+          })
+            .save()
+            .then((newUser) => {
+              done(null, newUser);
+            });
+        }
+      });
     }
   )
 );
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+passport.serializeUser((user, done) => {
+  done(null, user._id);
+});
+
+passport.deserializeUser((_id, done) => {
+  User.findById(_id).then((user) => {
+    done(null, user._id);
+  });
+});
 
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;

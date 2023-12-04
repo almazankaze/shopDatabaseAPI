@@ -27,7 +27,7 @@ userRouter.post(
 userRouter.get(
   "/google",
   passport.authenticate("google", {
-    scope: ["profile"],
+    scope: ["profile", "email"],
     failureMessage: true,
   })
 );

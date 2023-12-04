@@ -31,7 +31,11 @@ export const login = async (req, res) => {
 };
 
 export const googleLogin = async (req, res) => {
-  res.status(200).json("login success");
+  const userData = {
+    _id: req.user._id,
+    username: req.user.username,
+  };
+  res.status(200).json(userData);
 };
 
 export const getUser = async (req, res, next) => {
