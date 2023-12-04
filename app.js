@@ -88,7 +88,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.use(
   new GoogleStrategy(
     {
-      callbackURL: "/users/oauth2/redirect/google",
+      callbackURL: "http://localhost:5173/users/oauth2/redirect/google",
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     },

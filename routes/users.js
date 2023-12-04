@@ -34,7 +34,9 @@ userRouter.get(
 
 userRouter.get(
   "/oauth2/redirect/google",
-  passport.authenticate("google"),
+  passport.authenticate("google", {
+    failureMessage: true,
+  }),
   googleLogin
 );
 
