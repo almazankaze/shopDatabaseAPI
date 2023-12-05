@@ -1,5 +1,6 @@
 import express from "express";
 import passport from "passport";
+import dotenv from "dotenv";
 
 import {
   register,
@@ -11,6 +12,10 @@ import {
 
 import catchAsync from "../utils/catchAsync.js";
 import { validateUserInfo } from "../middlewares/users.js";
+
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config();
+}
 
 const userRouter = express.Router();
 
@@ -25,6 +30,16 @@ userRouter.post(
 );
 
 userRouter.get(
+  "/oauth2/redirect/google",
+  passport.authenticate("google", {
+    successRedirect: process.env.WHITELISTED_DOMAINS,
+    failureRedirect: "/google/failed",
+    failureMessage: true,
+  }),
+  googleLogin
+);
+
+userRouter.get(
   "/google",
   passport.authenticate("google", {
     scope: ["profile", "email"],
@@ -32,13 +47,9 @@ userRouter.get(
   })
 );
 
-userRouter.get(
-  "/oauth2/redirect/google",
-  passport.authenticate("google", {
-    failureMessage: true,
-  }),
-  googleLogin
-);
+userRouter.get("/google/failed", (req, res) => {
+  res.status(401).json({ error: true });
+});
 
 userRouter.get("/getUser", catchAsync(getUser));
 

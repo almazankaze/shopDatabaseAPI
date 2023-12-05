@@ -37,7 +37,7 @@ const corsOptions = {
       callback(new Error("Not allowed by CORS"));
     }
   },
-
+  methods: "GET,POST,PUT,DELETE",
   credentials: true,
 };
 
@@ -88,9 +88,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.use(
   new GoogleStrategy(
     {
-      callbackURL: "http://localhost:5173/users/oauth2/redirect/google",
+      callbackURL: "/users/oauth2/redirect/google",
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      scope: ["profile", "email"],
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleId: profile.id }).then((currentUser) => {
@@ -98,10 +99,10 @@ passport.use(
           done(null, currentUser);
         } else {
           new User({
-            email: profile.emails[0].value,
+            email: profile.emails?.[0].value,
             username: profile.displayName,
             googleId: profile.id,
-            thumbnail: profile._json.image.url,
+            thumbnail: profile.photos?.[0].value,
           })
             .save()
             .then((newUser) => {
