@@ -99,19 +99,15 @@ passport.use(
 
         if (currentUser) {
           done(null, currentUser);
+        } else {
+          const newUser = await new User({
+            email: profile.emails?.[0].value,
+            username: profile.displayName,
+            googleId: profile.id,
+            thumbnail: profile.photos?.[0].value,
+          }).save();
+          done(null, newUser);
         }
-      } catch (e) {
-        throw new AppError("Google Login Error: " + e.message, 401);
-      }
-
-      try {
-        const newUser = await new User({
-          email: profile.emails?.[0].value,
-          username: profile.displayName,
-          googleId: profile.id,
-          thumbnail: profile.photos?.[0].value,
-        }).save();
-        done(null, newUser);
       } catch (e) {
         throw new AppError("Google Login Error: " + e.message, 401);
       }
