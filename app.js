@@ -93,23 +93,28 @@ passport.use(
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       scope: ["profile", "email"],
     },
-    (accessToken, refreshToken, profile, done) => {
-      User.findOne({ googleId: profile.id }).then((currentUser) => {
+    async (accessToken, refreshToken, profile, done) => {
+      try {
+        const currentUser = await User.findOne({ googleId: profile.id });
+
         if (currentUser) {
           done(null, currentUser);
-        } else {
-          new User({
-            email: profile.emails?.[0].value,
-            username: profile.displayName,
-            googleId: profile.id,
-            thumbnail: profile.photos?.[0].value,
-          })
-            .save()
-            .then((newUser) => {
-              done(null, newUser);
-            });
         }
-      });
+      } catch (e) {
+        throw new AppError("Google Login Error: " + e.message, 401);
+      }
+
+      try {
+        const newUser = await new User({
+          email: profile.emails?.[0].value,
+          username: profile.displayName,
+          googleId: profile.id,
+          thumbnail: profile.photos?.[0].value,
+        }).save();
+        done(null, newUser);
+      } catch (e) {
+        throw new AppError("Google Login Error: " + e.message, 401);
+      }
     }
   )
 );
