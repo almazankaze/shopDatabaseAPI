@@ -59,6 +59,7 @@ store.on("error", function (e) {
 });
 
 const sessionConfig = {
+  store,
   name: "trust-alma",
   secret: process.env.SECRET,
   resave: false,
